@@ -23,20 +23,18 @@ sklad = {
 
 kod_soucastky = input(f"Zadejte kód součastky, kterou si chcete koupit. ")
 
-
 if kod_soucastky in sklad:
     pocet_soucastek = int(input(f"Kolik si přejete koupit kusů? "))
+
     for key, value in sklad.items():
 
-        if pocet_soucastek <= value in sklad.items():
+        if pocet_soucastek <= value:
             print(f"Vaši poptávku můžeme uspokojit v plné výši.")
-            value['kod_soucastky'] -= pocet_soucastek
+            sklad[key] -= pocet_soucastek
 
         else: 
-            pocet_soucastek > value in sklad.items()
             print(f"Omlouváme se, můžeme Vám nabídnout pouze omezené množství této součástky {key}, které je {value}.")
-            sklad.pop('kod_soucastky')
+        sklad.pop('kod_soucastky')
 
 else: 
     print(f"Omlouváme se, tato součástka není skladem.")
-
