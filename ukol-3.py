@@ -15,15 +15,15 @@ with open('body.json', encoding='utf-8') as treti_ukol:
 print(data)
 
 znamka = input(data)
-    if znamka >= 60:
-        znamka = ["Pass"]
+    if znamka in treti_ukol >= 60:
+        hodnoceni = ["Pass"]
     else:
-        znamka = ["Fail"]
+        hodnoceni = ["Fail"]
 
 
 
 with open('body.json', mode='w', encoding='utf-8') as prospech:
-    json.dump(znamka, prospech)
+    json.dump(hodnoceni, prospech)
     data2 = prospech.read()
 
 print(prospech)
