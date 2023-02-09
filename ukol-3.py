@@ -10,21 +10,17 @@
 import json
 
 with open('body.json', encoding='utf-8') as treti_ukol:
-    data = treti_ukol.read()
+    data = json.loads(treti_ukol.read())
 
 print(data)
 
 znamka = input(json.loads(data))
-
-if znamka in treti_ukol >= 60:
-    hodnoceni = ["Pass"]
-else:
-    hodnoceni = ["Fail"]
+for student in data:
+    if znamka in treti_ukol >= 60:
+        hodnoceni = ["Pass"]
+    else:
+        hodnoceni = ["Fail"]
 
 
 with open('body.json', mode='w', encoding='utf-8') as prospech:
    json.dump(hodnoceni, prospech)
-   data2 = prospech.read()
-
-seznam_prospech = json.loads(data2)
-print(data2[0])
