@@ -14,17 +14,17 @@ with open('body.json', encoding='utf-8') as treti_ukol:
 
 print(data)
 
-znamka = input(data)
-    if znamka in treti_ukol >= 60:
-        hodnoceni = ["Pass"]
-    else:
-        hodnoceni = ["Fail"]
+znamka = input(json.loads(data))
 
+if znamka in treti_ukol >= 60:
+    hodnoceni = ["Pass"]
+else:
+    hodnoceni = ["Fail"]
 
 
 with open('body.json', mode='w', encoding='utf-8') as prospech:
-    json.dump(hodnoceni, prospech)
-    data2 = prospech.read()
+   json.dump(hodnoceni, prospech)
+   data2 = prospech.read()
 
-print(prospech)
-
+seznam_prospech = json.loads(data2)
+print(data2[0])
