@@ -10,7 +10,7 @@
 import json
 
 with open('body.json', encoding='utf-8') as treti_ukol:
-    data = json.loads(treti_ukol.read())
+    data = json.loads(treti_ukol.read()
 
 print(data)
 
@@ -24,3 +24,7 @@ for student in data:
 
 with open('body.json', mode='w', encoding='utf-8') as prospech:
    json.dump(hodnoceni, prospech)
+   data2 = prospech.read()
+
+seznam_prospech = json.loads(data2)
+print(data2[0])
