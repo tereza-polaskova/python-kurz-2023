@@ -34,7 +34,7 @@ if kod_soucastky in sklad:
 
         else: 
             print(f"Omlouváme se, můžeme Vám nabídnout pouze omezené množství této součástky {key}, které je {value}.")
-        sklad.pop('kod_soucastky')
+            # sklad.pop('kod_soucastky')
 
 else: 
     print(f"Omlouváme se, tato součástka není skladem.")

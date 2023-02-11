@@ -12,7 +12,7 @@ import json
 with open('body.json', encoding='utf-8') as treti_ukol:
     data = json.loads(treti_ukol.read()
 
-print(data)
+    print(data)
 
 
 znamka = input(json.loads(data))
